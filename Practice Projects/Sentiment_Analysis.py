@@ -108,12 +108,12 @@ if st.button("Fetch and Analyze Google Reviews"):
             for idx, review in enumerate(reviews, 1):
                 sentiment, confidence = analyze_sentiment(review["snippet"])
                 st.write(f"**Review {idx}:** {review['snippet']}")
-                st.write(f"🟢 Sentiment: {sentiment} | 🔹 Confidence Score: {confidence}")
+                st.write(f" Sentiment: {sentiment} |  Confidence Score: {confidence}")
                 st.write("---")
             
             # Display the summary
             summary = summarize_reviews(reviews)
-            st.subheader("🔹 Summary of Reviews:")
+            st.subheader(" Summary of Reviews:")
             st.success(summary)    
             
         else:
@@ -129,6 +129,6 @@ user_review = st.text_area("Enter your review", "")
 if st.button("Analyze Sentiment"):
     if user_review.strip():
         sentiment, confidence = analyze_sentiment(user_review)
-        st.success(f"🟢 Sentiment: {sentiment} | 🔹 Confidence Score: {confidence}")
+        st.success(f" Sentiment: {sentiment} |  Confidence Score: {confidence}")
     else:
         st.warning("Please enter a review to analyze.")
