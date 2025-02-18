@@ -4,9 +4,14 @@ import google.generativeai as genai
 import streamlit as st
 import requests
 
-# Load API Key Securely
-API_KEY = "fb8b265db144a62dc24a904ba70f8ae651f4c5db9e134f83302a178dc4b84c13"
-GEMINI_API_KEY = "AIzaSyDGcrRFpf-WM2hxKA2rFp1gLGCxpbWWjSI"
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
+
+# Access API keys
+GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
+SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
 # Configure Google Gemini API
 os.environ["GOOGLE_API_KEY"] = GEMINI_API_KEY
