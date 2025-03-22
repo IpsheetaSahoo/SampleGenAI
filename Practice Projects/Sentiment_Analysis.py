@@ -7,7 +7,7 @@ import requests
 from dotenv import load_dotenv
 
 # Load .env file
-load_dotenv()
+load_dotenv("C:/Users/Ipsheeta/Documents/GitHub/SampleGenAI/Practice Projects/secret.env")
 
 # Access API keys
 GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -18,7 +18,7 @@ os.environ["GOOGLE_API_KEY"] = GEMINI_API_KEY
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Load the Gemini model
-model = genai.GenerativeModel("gemini-pro")
+model = genai.GenerativeModel("gemini-2.0-flash")
 
 
 # Function to fetch Google audience reviews
@@ -26,7 +26,7 @@ def fetch_google_reviews(movie_name, num_reviews=5):
     params = {
         "engine": "google",
         "q": f"{movie_name} audience reviews",
-        "api_key": API_KEY,
+        "api_key": SERPAPI_KEY,
     }
 
     response = requests.get("https://serpapi.com/search", params=params)
