@@ -7,7 +7,7 @@ import requests
 from dotenv import load_dotenv
 
 # Load .env file
-load_dotenv("C:/Users/Ipsheeta/Documents/GitHub/SampleGenAI/Practice Projects/secret.env")
+load_dotenv("secret.env") 
 
 # Access API keys
 GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
